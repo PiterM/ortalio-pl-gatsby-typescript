@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'gatsby'
-import { colors } from '../styles/variables';
+import { colors, fonts } from '../styles/variables';
 
 const StyledHeaderDiv = styled.div`
   text-align: center;
@@ -22,7 +22,7 @@ const StyledHeaderWeatherForcastBox = styled.div`
 `;
 
 const StyledHeaderTitle = styled.header`
-  font-family: 'Playfair Display', serif;
+  font-family: ${fonts.headline}, serif;
   font-weight: 900;
   font-size: 80px;
   text-transform: uppercase;
@@ -33,7 +33,7 @@ const StyledHeaderTitle = styled.header`
 `;
 
 const StyledHomePageLink = styled(Link)`
-  color: ${colors.black};
+  color: ${colors.newspaperText};
   outline: none;
 `;
 
@@ -49,8 +49,8 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => (
-  <StyledHeaderDiv className="head">
-    <HeaderWrapperDiv className="head__header-wrapper">
+  <StyledHeaderDiv>
+    <HeaderWrapperDiv>
       <StyledHeaderWeatherForcastBox>
         Weatherforcast for the next 24 hours: Plenty of Sunshine<br />
         Wind: 7km/h SSE; Ther: 21°C; Hum: 82%

@@ -18,14 +18,17 @@ export const colors = {
     calm: 'rgba(0, 0, 0, 0.54)'
   },
   white: '#fff',
-  black: '#000'
+  black: '#000',
+  newspaperPaper: '#f9f7f1',
+  newspaperText: '#2f2f2f',
 }
 
 export const fonts = {
   sansSerif:
     'Muli, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: '"Droid Serif", Georgia, "Times New Roman", Times, serif',
-  monospace: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace'
+  monospace: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace',
+  headline: '"Playfair Display", "Droid Serif", Georgia, "Times New Roman", Times, serif',
 }
 
 export const breakpoints = {
@@ -44,7 +47,7 @@ export const widths = {
 
 export const dimensions = {
   fontSize: {
-    regular: 16,
+    regular: 14,
     large: 18
   },
   headingSizes: {
@@ -57,9 +60,16 @@ export const dimensions = {
     regular: 1.45,
     heading: 1.2
   },
+  width: {
+    headline: '17.5%'
+  },
   containerPadding: 1.5
 }
 
 export const heights = {
   header: 60
+}
+
+export const transition = {
+  duration: '.7s'
 }

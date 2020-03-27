@@ -22,8 +22,9 @@ export default `
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: ${fonts.serif};
-    color: ${colors.black};
-    background-color: ${colors.white};
+    font-size: ${dimensions.fontSize.regular};
+    color: ${colors.newspaperText};
+    background-color: ${colors.newspaperPaper};
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
   }

@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-typescript-plus",
-  "description": "A starter kit for TypeScript-based Gatsby projects with sensible defaults.",
+  "name": "ortalio_pl",
+  "description": "Ortalio's Portfolio",
   "version": "1.0.0",
   "private": true,
-  "author": "Resi Respati <resir014@gmail.com>",
+  "author": "Piotr Markiewicz <ptr.kiewicz@gmail.com>",
   "keywords": [
     "gatsby"
   ],
@@ -52,6 +52,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
+    "react-player": "^1.15.2",
     "typescript": "^3.5.2"
   },
   "devDependencies": {

@@ -26,7 +26,7 @@ export const colors = {
 export const fonts = {
   sansSerif:
     'Muli, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
-  serif: '"Droid Serif", Georgia, "Times New Roman", Times, serif',
+  serif: '"Playfair Display", Georgia, "Times New Roman", Times, serif',
   monospace: 'Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace, monospace',
   headline: '"Playfair Display", "Droid Serif", Georgia, "Times New Roman", Times, serif',
 }
@@ -61,7 +61,7 @@ export const dimensions = {
     heading: 1.2
   },
   width: {
-    headline: '17.5%'
+    headline: '20%'
   },
   containerPadding: 1.5
 }

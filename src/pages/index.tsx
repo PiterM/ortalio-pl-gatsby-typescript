@@ -12,6 +12,8 @@ const IndexPage = () => (
         <AudioItem />
         <AudioItem />
         <AudioItem />
+        <AudioItem />
+        <AudioItem />
       </Container>
     </Page>
   </IndexLayout>

@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 
 const StyledAudioItemText = styled.div`
   margin-top: 20px;
-  text-align: justify;
+  text-align: center;
 `;
 
 const AudioItemText: React.FC = () => (

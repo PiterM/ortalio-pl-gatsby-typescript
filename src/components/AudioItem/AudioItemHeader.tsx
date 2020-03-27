@@ -30,11 +30,12 @@ const StyledAudioItemSubHeadlineBottom = styled.div`
   font-size: 12px;
   box-sizing: border-box;
   padding: 10px 0 10px 0;
+  letter-spacing: 1px;
 
   &:before {
     border-top: 1px solid #2f2f2f;
     content: '';
-    width: 100px;
+    width: 200px;
     height: 7px;
     display: block;
     margin: 0 auto;
@@ -43,7 +44,7 @@ const StyledAudioItemSubHeadlineBottom = styled.div`
   &:after {
     border-bottom: 1px solid #2f2f2f;
     content: '';
-    width: 100px;
+    width: 200px;
     height: 10px;
     display: block;
     margin: 0 auto;
@@ -54,10 +55,12 @@ const AudioItemHeader: React.FC = () => (
   <StyledAudioItemHead>
     <StyledAudioItemHeadline>
       <StyledAudioItemSubHeadlineTop>
-        When darkness overspreads my eyes
+        Wszystkie kredyty Edyty
       </StyledAudioItemSubHeadlineTop>
       <StyledAudioItemSubHeadlineBottom>
-        by JOHANN WOLFGANG VON GOETHE
+        muzyka: RADOSŁAW DUTKIEWICZ<br />I PIOTR MARKIEWICZ<br />
+        słowa, wokal: PIOTR MARKIEWICZ<br />
+        klip: JERZY ZBIGNIEW MORYTO
       </StyledAudioItemSubHeadlineBottom>
     </StyledAudioItemHeadline>
   </StyledAudioItemHead>

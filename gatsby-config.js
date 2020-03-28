@@ -3,7 +3,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Ortalio',
-    description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
+    metaTitle: 'Ortalio - Słowa, Muzyka, Głos | Lyrics, Music, Vocal',
+    description: 'Electronic music project',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
     author: {

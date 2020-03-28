@@ -45,22 +45,23 @@ const StyledSubHeader = styled.div`
 `;
 
 interface HeaderProps {
-  title: string
+  intro: string;
+  title: string;
+  description: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => (
+const Header: React.FC<HeaderProps> = ({ description, intro, title }) => (
   <StyledHeaderDiv>
     <HeaderWrapperDiv>
       <StyledHeaderWeatherForcastBox>
-        Weatherforcast for the next 24 hours: Plenty of Sunshine<br />
-        Wind: 7km/h SSE; Ther: 21°C; Hum: 82%
+        <div dangerouslySetInnerHTML={{ __html: intro }} />
       </StyledHeaderWeatherForcastBox>
       <StyledHeaderTitle>
         <StyledHomePageLink to="/">{title}</StyledHomePageLink>
       </StyledHeaderTitle>
     </HeaderWrapperDiv>
     <StyledSubHeader>
-      York, MA - Thursday August 30, 1978 - Seven Pages
+      <div dangerouslySetInnerHTML={{ __html: description }} />
     </StyledSubHeader>
   </StyledHeaderDiv>
 )

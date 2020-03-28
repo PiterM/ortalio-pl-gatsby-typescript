@@ -13,19 +13,26 @@ interface StaticQueryProps {
   site: {
     siteMetadata: {
       title: string
+      metaTitle: string
       description: string
       keywords: string
     }
   }
 }
 
-const IndexLayout: React.FC = ({ children }) => (
+interface IndexLayoutProps {
+  intro: string;
+  description: string;
+}
+
+const IndexLayout: React.FC<IndexLayoutProps> = ({ intro, description, children }) => (
   <StaticQuery
     query={graphql`
       query IndexLayoutQuery {
         site {
           siteMetadata {
             title
+            metaTitle
             description
           }
         }
@@ -34,7 +41,7 @@ const IndexLayout: React.FC = ({ children }) => (
     render={(data: StaticQueryProps) => (
       <LayoutRoot>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={data.site.siteMetadata.metaTitle}
           meta={[
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords },
@@ -48,7 +55,11 @@ const IndexLayout: React.FC = ({ children }) => (
             }
           ]}
         />
-        <Header title={data.site.siteMetadata.title} />
+        <Header
+          intro={intro}
+          title={data.site.siteMetadata.title}
+          description={description}
+        />
         <LayoutMain>{children}</LayoutMain>
       </LayoutRoot>
     )}

@@ -6,12 +6,11 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
 
-interface PageTemplateProps {
+export interface PageTemplateProps {
   data: {
     site: {
       siteMetadata: {
         title: string
-        description: string
         author: {
           name: string
           url: string
@@ -23,17 +22,22 @@ interface PageTemplateProps {
       excerpt: string
       frontmatter: {
         title: string
+        intro: string
+        description: string
       }
     }
   }
 }
 
 const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
-  <IndexLayout>
+  <IndexLayout
+    intro={data.markdownRemark.frontmatter.intro}
+    description={data.markdownRemark.frontmatter.description}
+  >
     <Page>
       <Container>
-        <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        {/* <h1>{data.markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
       </Container>
       <AudioItem />
       <AudioItem />
@@ -51,7 +55,6 @@ export const query = graphql`
     site {
       siteMetadata {
         title
-        description
         author {
           name
           url
@@ -63,6 +66,8 @@ export const query = graphql`
       excerpt
       frontmatter {
         title
+        intro
+        description
       }
     }
   }

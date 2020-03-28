@@ -51,7 +51,12 @@ const StyledAudioItemSubHeadlineBottom = styled.div`
   }
 `;
 
-const AudioItemHeader: React.FC = ({ title, description }) => (
+interface AudioItemHeaderProps {
+  title: string;
+  description: string;
+}
+
+const AudioItemHeader: React.FC<AudioItemHeaderProps> = ({ title, description }) => (
   <StyledAudioItemHead>
     <StyledAudioItemHeadline>
       <StyledAudioItemSubHeadlineTop>

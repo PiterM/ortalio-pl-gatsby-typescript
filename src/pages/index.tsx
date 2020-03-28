@@ -12,6 +12,7 @@ interface EdgeProp {
       title: string
       description: string
       layout: string
+      intro: string;
     }
     html: string
   }
@@ -28,16 +29,6 @@ export interface IndexPageProps {
         }
       }
     }
-    markdownRemark: {
-      html: string
-      excerpt: string
-      frontmatter: {
-        title: string
-        intro: string
-        description: string
-        itemOrder: number
-      }
-    }
     allMarkdownRemark: {
       edges: EdgeProp[]
     }
@@ -48,17 +39,20 @@ class IndexPage extends React.Component<IndexPageProps> {
   render() {
     const { data } = this.props;
     const items = data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.layout === 'item');
+    const indexItem = data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.layout === 'index');
+
+    if (indexItem.length !== 1) {
+      return null;
+    }
 
     return (
       <IndexLayout
-        intro={data.markdownRemark.frontmatter.intro}
-        description={data.markdownRemark.frontmatter.description}
+        intro={indexItem[0].node.frontmatter.intro}
+        description={indexItem[0].node.frontmatter.description}
       >
         <Page>
-          <Container>
-            {/* <h1>{data.markdownRemark.frontmatter.title}</h1>
+          {/* <h1>{data.markdownRemark.frontmatter.title}</h1>
             <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
-          </Container>
           {this.renderAudioItems(items)}
         </Page>
       </IndexLayout>
@@ -102,19 +96,11 @@ export const query = graphql`
         }
       }
     }
-    markdownRemark {
-      html
-      excerpt
-      frontmatter {
-        title
-        intro
-        description
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___itemOrder], order: DESC}) {
+    allMarkdownRemark(sort: { fields: [frontmatter___itemOrder], order: ASC}) {
       edges {
         node {
           frontmatter {
+            intro
             title
             description
             layout

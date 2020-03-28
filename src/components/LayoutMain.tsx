@@ -1,11 +1,7 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-const StyledLayoutMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-`
+const StyledLayoutMain = styled.main``;
 
 interface LayoutMainProps {
   className?: string

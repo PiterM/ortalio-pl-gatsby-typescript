@@ -7,9 +7,7 @@ import AudioItemText from './AudioItemText';
 const StyledAudioItem = styled.div`
   line-height: ${dimensions.lineHeight.regular};
   width: ${dimensions.width.headline};
-  display: inline-block;
   padding: 0 1% 0 1%;
-  vertical-align: top;
   margin-bottom: 50px;
   transition: all ${transition.duration};
 
@@ -18,7 +16,13 @@ const StyledAudioItem = styled.div`
   }
 `;
 
-const AudioItem: React.FC = ({ title, description, html }) => (
+interface AudioItemProps {
+  title: string;
+  description: string;
+  html: string;
+}
+
+const AudioItem: React.FC<AudioItemProps> = ({ title, description, html }) => (
   <StyledAudioItem>
     <AudioItemHeader
       title={title}

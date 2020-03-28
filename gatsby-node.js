@@ -62,7 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-    const { slug, layout } = node.fields
+    let { slug, layout } = node.fields
+    slug = slug === '/index/' ? '/' : slug;
 
     createPage({
       path: slug,

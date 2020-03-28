@@ -1,7 +1,6 @@
 import * as React from 'react'
 import { graphql } from 'gatsby'
 
-import AudioItem from '../components/AudioItem/AudioItem';
 import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
@@ -33,13 +32,8 @@ const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
     <Page>
       <Container>
         <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} />
+        TO jest template strony głównej
       </Container>
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
     </Page>
   </IndexLayout>
 )

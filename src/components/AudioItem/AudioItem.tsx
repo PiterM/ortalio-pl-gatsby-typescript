@@ -18,10 +18,15 @@ const StyledAudioItem = styled.div`
   }
 `;
 
-const AudioItem: React.FC = () => (
+const AudioItem: React.FC = ({ title, description, html }) => (
   <StyledAudioItem>
-    <AudioItemHeader />
-    <AudioItemText />
+    <AudioItemHeader
+      title={title}
+      description={description}
+    />
+    <AudioItemText
+      html={html}
+    />
   </StyledAudioItem>
 );
 

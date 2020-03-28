@@ -6,7 +6,18 @@ import Page from '../components/Page'
 import Container from '../components/Container'
 import IndexLayout from '../layouts'
 
-export interface PageTemplateProps {
+interface EdgeProp {
+  node: {
+    frontmatter: {
+      title: string
+      description: string
+      layout: string
+    }
+    html: string
+  }
+}
+
+export interface IndexPageProps {
   data: {
     site: {
       siteMetadata: {
@@ -24,31 +35,61 @@ export interface PageTemplateProps {
         title: string
         intro: string
         description: string
+        itemOrder: number
       }
+    }
+    allMarkdownRemark: {
+      edges: EdgeProp[]
     }
   }
 }
 
-const PageTemplate: React.FC<PageTemplateProps> = ({ data }) => (
-  <IndexLayout
-    intro={data.markdownRemark.frontmatter.intro}
-    description={data.markdownRemark.frontmatter.description}
-  >
-    <Page>
-      <Container>
-        {/* <h1>{data.markdownRemark.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
-      </Container>
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
-      <AudioItem />
-    </Page>
-  </IndexLayout>
-)
+class IndexPage extends React.Component<IndexPageProps> {
+  render() {
+    const { data } = this.props;
+    const items = data.allMarkdownRemark.edges.filter(edge => edge.node.frontmatter.layout === 'item');
 
-export default PageTemplate
+    return (
+      <IndexLayout
+        intro={data.markdownRemark.frontmatter.intro}
+        description={data.markdownRemark.frontmatter.description}
+      >
+        <Page>
+          <Container>
+            {/* <h1>{data.markdownRemark.frontmatter.title}</h1>
+            <div dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }} /> */}
+          </Container>
+          {this.renderAudioItems(items)}
+        </Page>
+      </IndexLayout>
+    );
+  }
+
+  private renderAudioItems(items: EdgeProp[]) {
+    if (!items || !items.length) {
+      return null;
+    }
+
+    return items.map(item => {
+      return this.renderAudioItem(item);
+    });
+  }
+
+  private renderAudioItem(item: EdgeProp) {
+    const { title, description } = item.node.frontmatter;
+    const { html } = item.node;
+
+    return (
+      <AudioItem
+        title={title}
+        description={description}
+        html={html}
+      />
+    );
+  }
+}
+
+export default IndexPage
 
 export const query = graphql`
   query {
@@ -68,6 +109,18 @@ export const query = graphql`
         title
         intro
         description
+      }
+    }
+    allMarkdownRemark(sort: { fields: [frontmatter___itemOrder], order: DESC}) {
+      edges {
+        node {
+          frontmatter {
+            title
+            description
+            layout
+          }
+          html
+        }
       }
     }
   }

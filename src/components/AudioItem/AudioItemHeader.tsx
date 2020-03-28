@@ -51,16 +51,14 @@ const StyledAudioItemSubHeadlineBottom = styled.div`
   }
 `;
 
-const AudioItemHeader: React.FC = () => (
+const AudioItemHeader: React.FC = ({ title, description }) => (
   <StyledAudioItemHead>
     <StyledAudioItemHeadline>
       <StyledAudioItemSubHeadlineTop>
-        Wszystkie kredyty Edyty
+        {title}
       </StyledAudioItemSubHeadlineTop>
       <StyledAudioItemSubHeadlineBottom>
-        muzyka: RADOSŁAW DUTKIEWICZ<br />I PIOTR MARKIEWICZ<br />
-        słowa, wokal: PIOTR MARKIEWICZ<br />
-        klip: JERZY ZBIGNIEW MORYTO
+        <div dangerouslySetInnerHTML={{ __html: description }} />
       </StyledAudioItemSubHeadlineBottom>
     </StyledAudioItemHeadline>
   </StyledAudioItemHead>

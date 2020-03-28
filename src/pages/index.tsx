@@ -64,12 +64,12 @@ class IndexPage extends React.Component<IndexPageProps> {
       return null;
     }
 
-    return items.map(item => {
-      return this.renderAudioItem(item);
+    return items.map((item, i) => {
+      return this.renderAudioItem(i, item);
     });
   }
 
-  private renderAudioItem(item: EdgeProp) {
+  private renderAudioItem(i: number, item: EdgeProp) {
     const { title, description } = item.node.frontmatter;
     const { html } = item.node;
 
@@ -78,6 +78,7 @@ class IndexPage extends React.Component<IndexPageProps> {
         title={title}
         description={description}
         html={html}
+        index={i}
       />
     );
   }

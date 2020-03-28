@@ -1,72 +1,94 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { colors, dimensions, fonts } from '../../styles/variables';
+import {
+  audioItemHeaderTextVariants,
+  colors,
+} from '../../styles/variables';
 
-const StyledAudioItemHead = styled.div`
+const StyledAudioItemHeadline = styled.div`
   text-align: center;
   position: relative;
 `;
 
-const StyledAudioItemHeadline = styled.div`
+interface AudioItemHeadlineProps {
+  index: number;
+}
+
+const AudioItemHeadline = styled.div`
   text-align: center;
   line-height: normal;
-  font-family: ${fonts.headline};
+  box-sizing: border-box;
   display: block;
   margin: 0 auto;
 `;
 
-const StyledAudioItemSubHeadlineTop = styled.div`
-  ${StyledAudioItemHeadline};
-  font-weight: ${dimensions.fontWeight.semiBold};
-  font-style: italic;
-  font-size: ${dimensions.fontSize.title}px;
-  box-sizing: border-box;
-  padding: 10px 0 10px 0;
-`;
+const AudioItemHeadlineTop: React.FC<AudioItemHeadlineProps> = ({ index, children }) => {
+  const textVariantIndex = index % audioItemHeaderTextVariants.length;
+  const textVariant = audioItemHeaderTextVariants[textVariantIndex];
 
-const StyledAudioItemSubHeadlineBottom = styled.div`
-  ${StyledAudioItemHeadline};
-  font-weight: ${dimensions.fontWeight.bold};
-  font-size: ${dimensions.fontSize.small}px;
-  box-sizing: border-box;
-  padding: 10px 0 10px 0;
-  letter-spacing: 1px;
+  const StyledDiv = styled.div`
+    ${AudioItemHeadline}
+    padding: 10px 0 20px 0;
+    font-family: ${textVariant.top.font};
+    font-size: ${textVariant.top.fontSize}px;
+    font-weight: ${textVariant.top.fontWeight};
+    font-style: ${textVariant.top.fontStyle};
+    text-transform: ${textVariant.top.textTransform};
+  `;
 
-  &:before {
-    border-top: 1px solid ${colors.newspaperText};
-    content: '';
-    width: 200px;
-    height: 7px;
-    display: block;
-    margin: 0 auto;
-  }
+  return <StyledDiv>{children}</StyledDiv>;
+};
 
-  &:after {
-    border-bottom: 1px solid ${colors.newspaperText};
-    content: '';
-    width: 200px;
-    height: 10px;
-    display: block;
-    margin: 0 auto;
-  }
-`;
+const AudioItemHeadlineBottom: React.FC<AudioItemHeadlineProps> = ({ index, children }) => {
+  const textVariantIndex = index % audioItemHeaderTextVariants.length;
+  const textVariant = audioItemHeaderTextVariants[textVariantIndex];
+  const StyledDiv = styled.div`
+    ${AudioItemHeadline}
+    letter-spacing: 1px;
+    padding: 10px 0 30px 0;
+    font-family: ${textVariant.bottom.font};
+    font-size: ${textVariant.bottom.fontSize}px;
+    font-weight: ${textVariant.bottom.fontWeight};
+    font-style: ${textVariant.bottom.fontStyle};
+    text-transform: ${textVariant.bottom.textTransform};
+
+    &:before {
+      border-top: 1px solid ${colors.newspaperText};
+      content: '';
+      width: 200px;
+      height: 7px;
+      display: block;
+      margin: 0 auto;
+    }
+
+    &:after {
+      border-bottom: 1px solid ${colors.newspaperText};
+      content: '';
+      width: 200px;
+      height: 10px;
+      display: block;
+      margin: 0 auto;
+    }
+  `;
+
+  return <StyledDiv>{children}</StyledDiv>;
+};
 
 interface AudioItemHeaderProps {
+  index: number;
   title: string;
   description: string;
 }
 
-const AudioItemHeader: React.FC<AudioItemHeaderProps> = ({ title, description }) => (
-  <StyledAudioItemHead>
-    <StyledAudioItemHeadline>
-      <StyledAudioItemSubHeadlineTop>
-        {title}
-      </StyledAudioItemSubHeadlineTop>
-      <StyledAudioItemSubHeadlineBottom>
-        <div dangerouslySetInnerHTML={{ __html: description }} />
-      </StyledAudioItemSubHeadlineBottom>
-    </StyledAudioItemHeadline>
-  </StyledAudioItemHead>
+const AudioItemHeader: React.FC<AudioItemHeaderProps> = ({ index, title, description }) => (
+  <StyledAudioItemHeadline>
+    <AudioItemHeadlineTop index={index}>
+      {title}
+    </AudioItemHeadlineTop>
+    <AudioItemHeadlineBottom index={index}>
+      <div dangerouslySetInnerHTML={{ __html: description }} />
+    </AudioItemHeadlineBottom>
+  </StyledAudioItemHeadline>
 );
 
 export default AudioItemHeader;

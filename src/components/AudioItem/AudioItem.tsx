@@ -17,14 +17,16 @@ const StyledAudioItem = styled.div`
 `;
 
 interface AudioItemProps {
+  index: number;
   title: string;
   description: string;
   html: string;
 }
 
-const AudioItem: React.FC<AudioItemProps> = ({ title, description, html }) => (
+const AudioItem: React.FC<AudioItemProps> = ({ index, title, description, html }) => (
   <StyledAudioItem>
     <AudioItemHeader
+      index={index}
       title={title}
       description={description}
     />

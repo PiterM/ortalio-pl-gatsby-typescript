@@ -50,7 +50,10 @@ export const dimensions = {
     small: 12,
     regular: 14,
     large: 18,
-    title: 36
+    extraLarge: 24,
+    smallTitle: 30,
+    title: 36,
+    bigTitle: 42,
   },
   fontWeight: {
     semiBold: 400,
@@ -79,3 +82,54 @@ export const heights = {
 export const transition = {
   duration: '.7s'
 }
+
+export const audioItemHeaderTextVariants = [
+  {
+    top: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.semiBold,
+      fontSize: dimensions.fontSize.title,
+      fontStyle: 'italic',
+      textTransform: 'none',
+    },
+    bottom: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.bold,
+      fontSize: dimensions.fontSize.small,
+      fontStyle: 'normal',
+      textTransform: 'uppercase',
+    }
+  },
+  {
+    top: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.semiBold,
+      fontSize: dimensions.fontSize.bigTitle,
+      fontStyle: 'italic',
+      textTransform: 'uppercase',
+    },
+    bottom: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.bold,
+      fontSize: dimensions.fontSize.regular,
+      fontStyle: 'normal',
+      textTransform: 'none',
+    }
+  },
+  {
+    top: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.bold,
+      fontSize: dimensions.fontSize.smallTitle,
+      fontStyle: 'normal',
+      textTransform: 'uppercase',
+    },
+    bottom: {
+      font: fonts.headline,
+      fontWeight: dimensions.fontWeight.semiBold,
+      fontSize: dimensions.fontSize.extraLarge,
+      fontStyle: 'italic',
+      textTransform: 'none',
+    }
+  }
+];

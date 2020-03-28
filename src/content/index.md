@@ -1,7 +1,7 @@
 ---
 layout: index
 title: 'Example Markdown page'
-intro: 'Electronic music project. Polish lyrics and vocal.<br/>Funky and moody beats<br/>Also scenarios and audio performaces'
+intro: 'Electronic music project. Polish lyrics and vocal.<br/>Funky and moody beats.<br/>Also scenarios and audio performaces.'
 description: 'Poland, Olsztyn, 28 Marca 2020, częściowe zachmurzenie'
 ---
 

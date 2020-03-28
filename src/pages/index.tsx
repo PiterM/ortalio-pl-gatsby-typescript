@@ -3,7 +3,6 @@ import { graphql } from 'gatsby'
 
 import AudioItem from '../components/AudioItem/AudioItem';
 import Page from '../components/Page'
-import Container from '../components/Container'
 import IndexLayout from '../layouts'
 
 interface EdgeProp {

@@ -10,6 +10,7 @@ const StyledAudioItem = styled.div`
   padding: 0 1% 0 1%;
   margin-bottom: 50px;
   transition: all ${transition.duration};
+  flex: 0 1 20%;
 
   & + & {
     border-left: 1px solid ${colors.newspaperText};

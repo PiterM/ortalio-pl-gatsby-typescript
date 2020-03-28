@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { dimensions, transition } from '../../styles/variables';
+import { colors, dimensions, transition } from '../../styles/variables';
 import AudioItemHeader from './AudioItemHeader';
 import AudioItemText from './AudioItemText';
 
@@ -12,6 +12,10 @@ const StyledAudioItem = styled.div`
   vertical-align: top;
   margin-bottom: 50px;
   transition: all ${transition.duration};
+
+  & + & {
+    border-left: 1px solid ${colors.newspaperText};
+  }
 `;
 
 const AudioItem: React.FC = () => (

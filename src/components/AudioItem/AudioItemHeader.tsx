@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { fonts } from '../../styles/variables';
+import { colors, dimensions, fonts } from '../../styles/variables';
 
 const StyledAudioItemHead = styled.div`
   text-align: center;
@@ -17,23 +17,23 @@ const StyledAudioItemHeadline = styled.div`
 
 const StyledAudioItemSubHeadlineTop = styled.div`
   ${StyledAudioItemHeadline};
-  font-weight: 400;
+  font-weight: ${dimensions.fontWeight.semiBold};
   font-style: italic;
-  font-size: 36px;
+  font-size: ${dimensions.fontSize.title}px;
   box-sizing: border-box;
   padding: 10px 0 10px 0;
 `;
 
 const StyledAudioItemSubHeadlineBottom = styled.div`
   ${StyledAudioItemHeadline};
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: ${dimensions.fontWeight.bold};
+  font-size: ${dimensions.fontSize.small}px;
   box-sizing: border-box;
   padding: 10px 0 10px 0;
   letter-spacing: 1px;
 
   &:before {
-    border-top: 1px solid #2f2f2f;
+    border-top: 1px solid ${colors.newspaperText};
     content: '';
     width: 200px;
     height: 7px;
@@ -42,7 +42,7 @@ const StyledAudioItemSubHeadlineBottom = styled.div`
   }
 
   &:after {
-    border-bottom: 1px solid #2f2f2f;
+    border-bottom: 1px solid ${colors.newspaperText};
     content: '';
     width: 200px;
     height: 10px;

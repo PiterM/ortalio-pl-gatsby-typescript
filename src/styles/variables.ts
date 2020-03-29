@@ -20,6 +20,7 @@ export const colors = {
   white: '#fff',
   black: '#000',
   newspaperPaper: '#f9f7f1',
+  newspaperPaperHovered: '#f3f1ea',
   newspaperText: '#2f2f2f',
 }
 
@@ -70,7 +71,7 @@ export const dimensions = {
     heading: 1.2
   },
   width: {
-    headline: '20%'
+    headline: '20%',
   },
   containerPadding: 1.5
 }

@@ -68,6 +68,8 @@ export function renderSocialIcon(key: string, link: string, image: FixedObject) 
   return (
     <a href={link} target="_blank" key={key}>
       <Image
+        alt={`${key}.com`}
+        title={`${key}.com`}
         fixed={image}
       />
     </a>

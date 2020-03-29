@@ -8,6 +8,7 @@ import '../styles/normalize'
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
+import SocialIcons from '../components/SocialIcons/SocialIcons';
 
 interface StaticQueryProps {
   site: {
@@ -60,6 +61,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ intro, description, children 
           title={data.site.siteMetadata.title}
           description={description}
         />
+        <SocialIcons />
         <LayoutMain>{children}</LayoutMain>
       </LayoutRoot>
     )}

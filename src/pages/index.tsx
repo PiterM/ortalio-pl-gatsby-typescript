@@ -74,6 +74,7 @@ class IndexPage extends React.Component<IndexPageProps> {
 
     return (
       <AudioItem
+        key={i}
         title={title}
         description={description}
         html={html}

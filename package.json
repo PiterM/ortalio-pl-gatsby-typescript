@@ -29,9 +29,10 @@
     "babel-plugin-styled-components": "^1.10.1",
     "classnames": "^2.2.6",
     "gatsby": "^2.10.0",
-    "gatsby-image": "^2.2.1",
+    "gatsby-image": "^2.3.1",
     "gatsby-plugin-canonical-urls": "^2.1.0",
     "gatsby-plugin-emotion": "^4.1.0",
+    "gatsby-plugin-postcss": "^2.2.1",
     "gatsby-plugin-react-helmet": "^3.1.0",
     "gatsby-plugin-sharp": "^2.2.1",
     "gatsby-plugin-typescript": "^2.1.0",
@@ -68,6 +69,9 @@
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
     "gh-pages": "^2.0.1",
+    "postcss-color-function": "^4.1.0",
+    "postcss-custom-properties": "^9.1.1",
+    "postcss-easy-import": "^3.0.0",
     "prettier": "^1.18.2",
     "rimraf": "^2.6.3"
   }

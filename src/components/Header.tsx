@@ -35,6 +35,11 @@ const StyledHeaderTitle = styled.header`
 const StyledHomePageLink = styled(Link)`
   color: ${colors.newspaperText};
   outline: none;
+
+  &:hover {
+    color: #000;
+    text-decoration: none;
+  }
 `;
 
 const StyledSubHeader = styled.div`

@@ -13,14 +13,13 @@ module.exports = {
       email: 'resir014@gmail.com'
     },
     social: {
-      facebook: 'https://www.facebook.com/ortalio',
-      soundcloud: 'https://soundcloud.com/ortalio',
       audiomack: 'https://audiomack.com/artist/ortalio',
       instagram: 'https://instagram.com/ptrmarkiewicz',
       twitter: 'https://twitter.com/ptrmarkiewicz',
+      soundcloud: 'https://soundcloud.com/ortalio',
+      facebook: 'https://www.facebook.com/ortalio',
       youtube: 'https://www.youtube.com/channel/UC0WpPMCoe5blLkgiMgefwKQ',
       spotify: 'https://open.spotify.com/artist/6xg2rA6a086VVphZr5OT51?si=92NiVpZJSyWkXToVQkJCYg',
-      applemusic: 'https://itunes.apple.com/us/artist/ortalio/1464205874',
       deezer: 'https://www.deezer.com/pl/artist/313751',
       bandcamp: 'https://ortalio.bandcamp.com/',
     },

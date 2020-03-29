@@ -78,28 +78,7 @@ export function renderSocialIcon(key: string, link: string, image: FixedObject) 
 
 const socialIconsQuery = graphql`
   query SocialIconsQuery {
-    facebook: file(absolutePath: { regex: "/facebook-logo.png/" }) {
-      childImageSharp {
-        fixed(width: 120, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    soundcloud: file(absolutePath: { regex: "/soundcloud-logo.png/" }) {
-      childImageSharp {
-        fixed(width: 120, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
     audiomack: file(absolutePath: { regex: "/audiomack-logo.png/" }) {
-      childImageSharp {
-        fixed(width: 120, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    instagram: file(absolutePath: { regex: "/instagram-logo.png/" }) {
       childImageSharp {
         fixed(width: 120, height: 60) {
           ...GatsbyImageSharpFixed
@@ -113,7 +92,35 @@ const socialIconsQuery = graphql`
         }
       }
     }
+    instagram: file(absolutePath: { regex: "/instagram-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 120, height: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    soundcloud: file(absolutePath: { regex: "/soundcloud-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 120, height: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    facebook: file(absolutePath: { regex: "/facebook-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 120, height: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
     youtube: file(absolutePath: { regex: "/youtube-logo.png/" }) {
+      childImageSharp {
+        fixed(width: 120, height: 60) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    bandcamp: file(absolutePath: { regex: "/bandcamp-logo.png/" }) {
       childImageSharp {
         fixed(width: 120, height: 60) {
           ...GatsbyImageSharpFixed
@@ -128,13 +135,6 @@ const socialIconsQuery = graphql`
       }
     }
     deezer: file(absolutePath: { regex: "/deezer-logo.png/" }) {
-      childImageSharp {
-        fixed(width: 120, height: 60) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    bandcamp: file(absolutePath: { regex: "/bandcamp-logo.png/" }) {
       childImageSharp {
         fixed(width: 120, height: 60) {
           ...GatsbyImageSharpFixed

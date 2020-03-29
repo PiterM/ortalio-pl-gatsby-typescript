@@ -25,6 +25,7 @@ const StyledAudioItem = styled.div`
     background-color ${colors.newspaperPaperHovered};
     border-top: 1px solid ${colors.newspaperText};
     border-bottom: 1px solid ${colors.newspaperText};
+    color: #000;
   }
 
   & + & {

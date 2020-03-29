@@ -22,6 +22,7 @@ export const colors = {
   newspaperPaper: '#f9f7f1',
   newspaperPaperHovered: '#f3f1ea',
   newspaperText: '#2f2f2f',
+  audioItemPlayerBackground: '#fff'
 }
 
 export const fonts = {
@@ -73,7 +74,10 @@ export const dimensions = {
   width: {
     headline: '20%',
   },
-  containerPadding: 1.5
+  containerPadding: 1.5,
+  audioItemPlayer: {
+    height: 50,
+  }
 }
 
 export const heights = {

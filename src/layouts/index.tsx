@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import 'modern-normalize'
 import '../styles/normalize'
 
+import AudioItemPlayer from '../components/AudioItemPlayer/AudioItemPlayer';
 import Header from '../components/Header'
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
@@ -63,6 +64,7 @@ const IndexLayout: React.FC<IndexLayoutProps> = ({ intro, description, children 
         />
         <SocialIcons />
         <LayoutMain>{children}</LayoutMain>
+        <AudioItemPlayer />
       </LayoutRoot>
     )}
   />

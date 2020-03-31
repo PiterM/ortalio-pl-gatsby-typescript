@@ -1,5 +1,5 @@
-import { AudioItemState } from '../containers/AudioItem/AudioItem.State';
+import { MediaState } from '../containers/IndexPage/IndexPage.State';
 
 export interface StoreState {
-  media: AudioItemState[];
+  media: MediaState;
 }

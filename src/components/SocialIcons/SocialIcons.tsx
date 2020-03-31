@@ -46,7 +46,6 @@ const SocialIcons: React.FC = () => (
     query={socialIconsQuery}
     render={(data) => {
       const { social } = data.site.siteMetadata;
-      console.log('social', social);
       return (
         <StyledSocialIconsSection>
           {Object.keys(data).map((key) => {

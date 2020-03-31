@@ -1,5 +1,5 @@
 import { all, CallEffect, fork, ForkEffect, TakeEffect } from 'redux-saga/effects';
-import { watchMedia } from '../containers/AudioItem/AudioItem.saga';
+import { watchMedia } from '../containers/IndexPage/IndexPage.saga';
 
 const sagas: Array<() => IterableIterator<ForkEffect | CallEffect | TakeEffect>> = [
   watchMedia,
